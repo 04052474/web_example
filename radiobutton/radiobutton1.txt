@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Default2 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        int total = 0;
+        string total1;
+        if (CheckBox1.Checked == true)
+        {
+            int howmany1 = Convert.ToInt32(TextBox1.Text);
+            int dollar1 = Convert.ToInt32(TextBox2.Text);
+            total += howmany1 * dollar1;
+        }
+        if (CheckBox2.Checked==true)
+        {
+            int howmany2 = Convert.ToInt32(TextBox3.Text);
+            int dollar2 = Convert.ToInt32(TextBox4.Text);
+            total += howmany2 * dollar2;
+        }
+        if (CheckBox3.Checked == true)
+        {
+            int howmany3 = Convert.ToInt32(TextBox5.Text);
+            int dollar3 = Convert.ToInt32(TextBox6.Text);
+            total += howmany3 * dollar3;
+        }
+        total1 = Convert.ToString(total);
+        Label1.Text = "總價錢"+total1+"元";
+     }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        if (rdall.Checked)
+        {
+            Label2.Text = rdall.Text;
+        }
+        if (rdhelf.Checked)
+        {
+            Label2.Text = rdhelf.Text;
+        }
+        if (rdthree.Checked)
+        {
+            Label2.Text = rdthree.Text;
+        }
+    }
+}
